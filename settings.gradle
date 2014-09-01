@@ -1,0 +1,2 @@
+include 'java-jmx-statistics', ':samples:java-jmx-statistics-samples-shared', 'samples:java-jmx-statistics-samples-aspectj', 'samples:java-jmx-statistics-samples-spring', 'samples:java-jmx-statistics-samples-standard'
+rootProject.name = "java-jmx-statistics-parent"

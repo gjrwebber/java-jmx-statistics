@@ -1,0 +1,15 @@
+mainClassName = 'org.gw.samples.SpringSampleMain'
+description = 'Sample project for showcasing the Java JMX Statistics Suite using Spring.'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Java JMX Statistics Samples - Spring', 'Implementation-Version': version
+    }
+}
+
+
+run.doFirst {
+    jvmArgs("-javaagent:${configurations.javaAgentSpringInstrument.asPath}", "-Dcom.sun.management.jmxremote.port=4880", "-Dcom.sun.management.jmxremote.authenticate=false", "-Dcom.sun.management.jmxremote.ssl=false")
+}
+
+

@@ -1,0 +1,31 @@
+apply plugin: 'maven-publish'
+
+description = 'Statistics suite for generating and providing application statistics through JMX to be viewed in Jconsole.'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Java JMX Statistics', 'Implementation-Version': version
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            artifact sourceJar {
+                classifier "sources"
+            }
+            artifact javadocJar {
+                classifier "javadoc"
+            }
+        }
+    }
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    from 'build/docs/javadoc'
+}
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<aspectj>
+
+    <weaver options="-showWeaveInfo -verbose -Xset:weaveJavaxPackages=true">
+        <include within="org.gw.samples..*"/>
+        <include
+                within="org.gw.stats.aop.AnnotationDrivenJMXStatisticsService"/>
+    </weaver>
+
+    <aspects>
+        <aspect
+                name="org.gw.stats.aop.AnnotationDrivenJMXStatisticsService"/>
+    </aspects>
+
+</aspectj>

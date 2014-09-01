@@ -1,0 +1,20 @@
+subprojects {
+
+    dependencies {
+        compile project(':java-jmx-statistics')
+    }
+
+}
+
+configure([project(":samples:java-jmx-statistics-samples-spring"), project(":samples:java-jmx-statistics-samples-aspectj"), project(":samples:java-jmx-statistics-samples-standard")]) {
+
+    apply plugin: 'application'
+    applicationDefaultJvmArgs = ["-Dcom.sun.management.jmxremote.port=4880", "-Dcom.sun.management.jmxremote.authenticate=false", "-Dcom.sun.management.jmxremote.ssl=false", "-javaagent:/Users/gman/.m2/repository/org/springframework/spring-instrument/4.0.6.RELEASE/spring-instrument-4.0.6.RELEASE.jar"]
+
+    dependencies {
+        compile project(':samples:java-jmx-statistics-samples-shared')
+    }
+
+}
+
+

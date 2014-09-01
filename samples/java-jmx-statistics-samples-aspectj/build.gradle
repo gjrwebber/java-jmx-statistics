@@ -1,0 +1,14 @@
+mainClassName = 'org.gw.samples.AspectjSampleMain'
+description = 'Sample project for showcasing the Java JMX Statistics Suite using Aspectj.'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Java JMX Statistics Samples - Aspectj', 'Implementation-Version': version
+    }
+}
+
+run.doFirst {
+    jvmArgs("-javaagent:${configurations.javaAgentAspectjWeaver.asPath}", "-Dcom.sun.management.jmxremote.port=4880", "-Dcom.sun.management.jmxremote.authenticate=false", "-Dcom.sun.management.jmxremote.ssl=false")
+}
+
+

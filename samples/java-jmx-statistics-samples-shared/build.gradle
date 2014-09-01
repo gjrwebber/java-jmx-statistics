@@ -1,0 +1,9 @@
+description = 'Shared code used by the samples applications.'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Java JMX Statistics Samples - Shared', 'Implementation-Version': version
+    }
+}
+
+

@@ -1,0 +1,40 @@
+allprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.6
+    version = '1.0.0'
+    group = 'org.gw'
+
+    repositories {
+        maven {
+            url "/Users/gman/.m2/repository"
+        }
+        mavenCentral()
+    }
+
+    configurations {
+        javaAgentSpringInstrument
+        javaAgentAspectjWeaver
+    }
+
+    dependencies {
+        compile 'org.gw:commons-utils:1.0.0'
+        compile 'commons-collections:commons-collections:3.2'
+        compile 'org.springframework:spring-core:4.0.6.RELEASE'
+        compile 'org.springframework:spring-context:4.0.6.RELEASE'
+        compile 'org.aspectj:aspectjrt:1.8.1'
+        compile 'org.aspectj:aspectjtools:1.8.1'
+        compile 'org.reflections:reflections:0.9.9-RC1'
+        compile 'org.slf4j:slf4j-api:1.6.6'
+        testCompile 'junit:junit:4.11'
+        testCompile 'org.springframework:spring-test:4.0.6.RELEASE'
+        javaAgentSpringInstrument "org.springframework:spring-instrument:4.0.6.RELEASE"
+        javaAgentAspectjWeaver "org.aspectj:aspectjweaver:1.8.1"
+    }
+
+    test.doFirst {
+        jvmArgs "-javaagent:${configurations.javaAgentSpringInstrument.asPath}"
+    }
+
+}
+

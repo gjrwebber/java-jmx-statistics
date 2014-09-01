@@ -1,0 +1,13 @@
+mainClassName = 'org.gw.samples.StandardSampleMain'
+description = 'Sample project for showcasing the Java JMX Statistics Suite using standard Java.'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Java JMX Statistics Samples - Standard Java', 'Implementation-Version': version
+    }
+}
+
+dependencies {
+    compile project(':samples:java-jmx-statistics-samples-shared')
+}
+
