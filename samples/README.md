@@ -9,13 +9,16 @@ I have provided a couple of samples in this folder to get you started. Once you 
 
 ####Running the samples
 
-If using an IDE and it supports Gradle. Once you have imported the projects, open the Gradle view select the target 'run' on the desired sample.
+If using an IDE and it supports Gradle. Once you have imported the projects, open the Gradle view select the target 'run' on the desired sample. 
 
 ... or on the command line ...
 
 - cd {java-jmx-statistics-parent}/samples/{sample}
 - gradle run
-- Open up JConsole and have a look at the MBeans tab for the statistics.
+
+
+Open up JConsole and have a look at the MBeans tab for the statistics.
+
 
 ##Standard Sample
 
