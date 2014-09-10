@@ -31,7 +31,7 @@ public class MyObject {
      * only if the name is "Lara".
      * </p>
      */
-    @IncrementStat(value = "Dynamic #name", condition = "#name == 'Lara'")
+    @IncrementStat(value = "Only #name", condition = "#name == 'Lara'")
     public void DynamicLara(String name) throws Exception {
         // .. do something
         if (name == null) {

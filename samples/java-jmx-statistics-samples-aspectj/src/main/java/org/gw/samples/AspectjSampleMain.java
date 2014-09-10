@@ -60,8 +60,13 @@ public class AspectjSampleMain {
         // able to log stats on standard Objects.
         MyObject pojo = new MyObject();
         try {
-            pojo.DynamicName("Harry");
+            pojo.DynamicName("Jake");
+            pojo.DynamicName("Jake");
+            pojo.DynamicName("Lara");
             pojo.DynamicLara("Lara");
+            pojo.DynamicLara("Lara");
+            pojo.DynamicLara("Bob");
+            pojo.DynamicName("Harry");
         } catch (Exception e) {
             e.printStackTrace();
         }
